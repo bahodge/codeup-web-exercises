@@ -15,90 +15,204 @@
     <!--Get request is generally for downloading info, like search-->
     <!--Post is used for uploading like login forms-->
     <form action="https://hookb.in/E7Rer1e0" method="GET" id="login-form">
-        <lable for="username">Username:</lable>
-        <input type="text" name="username" id="username" placeholder="Username">
-        <lable for="password">Password:</lable>
-        <input type="password" name="password" id="password" placeholder="Password">
-        <button type="submit">Submit</button>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Username">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+
+        <div>
+            <button type="reset">Clear</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <h2>Query - Sent to External Site.</h2>
+    <form action="https://duckduckgo.com" method="GET">
+        <input type="hidden" name="q" value="Codeup">
+        <button type="submit">Duck Duck Go!</button>
     </form>
 
     <h2>Query</h2>
-    <h3>Search Using Link</h3>
-    <!-- Searching using a link -->
-    <a href="?building_type=apartment&zipcode=78261">Search for Apartments Now!</a>
+    <div>
+        <h3>Search Using Link</h3>
+        <!-- Searching using a link -->
+        <a href="?building_type=apartment&zipcode=78261">Search for Apartments Now!</a>
+    </div>
 
     <h3>Search Using Form</h3>
     <form action="#" method="GET">
-        <lable for="building_type">Building Type</lable>
-        <input type="text" name="building_type" id="building_type" placeholder="Building Type">
-
-        <lable for="zipcode">Zipcode</lable>
-        <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode">
-
-        <button type="submit">Submit</button>
+        <div>
+            <label for="building_type">Building Type</label>
+            <input type="text" name="building_type" id="building_type" placeholder="Building Type">
+        </div>
+        <div>
+            <label for="zipcode">Zipcode</label>
+            <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
     </form>
 
     <h2>Text Input/Text Area</h2>
     <form action="https://hookb.in/E7Rer1e0" method="POST">
-        <lable for="to_address">To:</lable>
-        <input type="text" name="to_address" id="to_address" placeholder="@goober.com">
-        <br>
-        <lable for="subject_line">Subject:</lable>
-        <input type="text" name="subject_line" id="subject_line" placeholder="Subject">
-        <br>
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" placeholder="Message" cols="30" rows="15"></textarea>
-        <br>
-        <button type="submit">Send</button>
+        <div>
+            <label for="to_address">To:</label>
+            <input type="text" name="to_address" id="to_address" placeholder="@goober.com">
+        </div>
+        <div>
+            <label for="subject_line">Subject:</label>
+            <input type="text" name="subject_line" id="subject_line" placeholder="Subject">
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" placeholder="Message" cols="30" rows="15"></textarea>
+        </div>
+        <div>
+            <button type="submit">Send</button>
+        </div>
     </form>
 
     <h2>Checkboxes</h2>
     <!-- mailing list is set to "checked" as default -->
     <form action="https://hookb.in/E7Rer1e0" method="POST">
-        <lable for="mailing_list">Join Mailing List</lable>
-        <input type="checkbox" name="mailing_list" id="mailing_list" checked>
-
-        <lable for="disable_notifications">Disable Notifications</lable>
-        <input type="checkbox" name="disable_notifications" id="disable_notifications">
-
-        <button type="submit">Submit</button>
+        <div>
+            <label for="mailing_list">Join Mailing List</label>
+            <input type="checkbox" name="mailing_list" id="mailing_list" checked>
+        </div>
+        <div>
+            <label for="disable_notifications">Disable Notifications</label>
+            <input type="checkbox" name="disable_notifications" id="disable_notifications">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
     </form>
+
 
     <h2>Radios</h2>
     <form action="https://hookb.in/E7Rer1e0" method="POST">
-        <h3>Question 1</h3>
-        <lable for="q1a">A</lable>
-        <input type="radio" name="q1[]" id="q1a" value="a">
-        <lable for="q1b">B</lable>
-        <input type="radio" name="q1[]" id="q1b" value="b">
-        <lable for="q1c">C</lable>
-        <input type="radio" name="q1[]" id="q1c" value="c">
-        <lable for="q1d">D</lable>
-        <input type="radio" name="q1[]" id="q1d" value="d">
-
-        <h3>Question 2</h3>
-        <lable for="q2a">A</lable>
-        <input type="radio" name="q2[]" id="q2a" value="a">
-        <lable for="q2b">B</lable>
-        <input type="radio" name="q2[]" id="q2b" value="b">
-        <lable for="q2c">C</lable>
-        <input type="radio" name="q2[]" id="q2c" value="c">
-        <lable for="q2d">D</lable>
-        <input type="radio" name="q2[]" id="q2d" value="d">
-
-        <button type="submit">Submit</button>
+        <div>
+            <h3>Question 1</h3>
+            <label for="q1a">A</label>
+            <input type="radio" name="q1[]" id="q1a" value="a">
+            <label for="q1b">B</label>
+            <input type="radio" name="q1[]" id="q1b" value="b">
+            <label for="q1c">C</label>
+            <input type="radio" name="q1[]" id="q1c" value="c">
+            <label for="q1d">D</label>
+            <input type="radio" name="q1[]" id="q1d" value="d">
+        </div>
+        <div>
+            <h3>Question 2</h3>
+            <label for="q2a">A</label>
+            <input type="radio" name="q2[]" id="q2a" value="a">
+            <label for="q2b">B</label>
+            <input type="radio" name="q2[]" id="q2b" value="b">
+            <label for="q2c">C</label>
+            <input type="radio" name="q2[]" id="q2c" value="c">
+            <label for="q2d">D</label>
+            <input type="radio" name="q2[]" id="q2d" value="d">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
     </form>
 
-    <h2>Selects</h2>
-    <h3>Preferred Prework Out Mixture</h3>
-    <form action="https://hookb.in/E7Rer1e0" method="POST">
-        <select name="prework_out_preference" id="prework_out_preference">
-            <option value="c4">Cellucor C4</option>
-            <option value="jacked_3d" selected>Jacked3D</option>
-            <option value="no_xplode">No Xplode</option>
-        </select>
 
-        <button type="submit">Submit</button>
+    <h2>Selects</h2>
+    <form action="https://hookb.in/E7Rer1e0" method="POST">
+        <div>
+            <label for="prework_out_preference">Favorite Prework Out</label>
+            <select name="prework_out_preference" id="prework_out_preference">
+                <option value="c4">Cellucor C4</option>
+                <option value="jacked_3d" selected>Jacked3D</option>
+                <option value="no_xplode">No Xplode</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <form action="https://hookb.in/E7Rer1e0" method="POST">
+
+
+        <div>
+            <h2>Input Types</h2>
+            <h3>Text</h3>
+            <!--Text-->
+            <input type="text">
+
+            <h3>Email</h3>
+            <!--email-->
+            <input type="email">
+
+            <h3>Password</h3>
+            <!--password-->
+            <input type="password">
+
+            <h3>Text Area</h3>
+            <!--textarea-->
+            <div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Enter Blog Post"></textarea>
+            </div>
+
+            <h3>Checkbox</h3>
+            <!--checkboxes-->
+            <label for="newsletter">Sign up for newsletter</label>
+            <input type="checkbox" name="newsletter" id="newsletter" value="true">
+
+            <h3>Multiple Checkboxes</h3>
+            <!--multiple checkboxes-->
+            <fieldset>
+                <legend>Choose Toppings</legend>
+                <input type="checkbox" name="topping" value="pepperoni">Pepperoni
+                <input type="checkbox" name="topping" value="cheese">Cheese
+                <input type="checkbox" name="topping" value="chicken">Chicken
+            </fieldset>
+
+            <h3>Radios</h3>
+            <!--radio buttons-->
+            <fieldset>
+
+            <legend>Choose Answer</legend>
+            A <input type="radio" name="rawr" value="a">
+            B <input type="radio" name="rawr" value="b">
+            C <input type="radio" name="rawr" value="c">
+            D <input type="radio" name="rawr" value="d">
+            </fieldset>
+
+            <h3>Selects</h3>
+            <!--selects-->
+            <div>
+                <label for="pants">Favorite Pants</label>
+                <select name="pants" id="pants">
+                    <option value="long_pants">Long Pants</option>
+                    <option value="short_pants">Short Pants</option>
+                </select>
+            </div>
+
+            <h3>Hidden</h3>
+            <!--hidden-->
+            <input type="hidden" name="user_id" value="3441">
+
+            <!--Labels-->
+            <label for="is_label">Is this a label?</label>
+            <input type="checkbox" name="is_label" value="true" id="is_label">
+
+            <h3>Disabled</h3>
+            <!--Disabled-->
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text" placeholder="This Is disabled" disabled>
+
+            <button type="submit">Submit</button>
+        </div>
+
     </form>
 
     <footer id="bottom">
