@@ -6,6 +6,27 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Residential Lease Application</title>
+
+    <style>
+        main {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        div {
+            margin: 10px;
+        }
+
+        .spacer {
+            margin-top: 30px;
+            padding: 0;
+        }
+    </style>
+
 </head>
 <body>
     <main>
@@ -13,11 +34,11 @@
 
     <h1>Residential Lease Application</h1>
     <hr>
-    <form action="">
+    <form action="https://hookb.in/Ezgz0Q6J" method="POST">
         <section id="top">
             <div>
                 <label for="physAdd">Physical Address</label>
-                <input type="text" name="physAdd" id="physAdd" placeholder="Street, City, State & Zip">
+                <input type="text" name="physAdd" id="physAdd" placeholder="Street, City, State & Zip" autofocus>
             </div>
             <!--Date Rent Deposit-->
             <div>
@@ -35,19 +56,303 @@
 
         <section>
             <div id="referral">
-                <p>Applicant referred by: </p>
+                <h3>Applicant Referred by:</h3>
                 <div>
                     <label for="real_estate_agent">Real Estate Agent</label>
                         <input type="radio" id="real_estate_agent" name="ref">
                         <input type="text" name="agent_name" placeholder="(Name)">
-                    <input type="text" name="agent_phone" placeholder="(xxx)-xxx-xxxx">
+                        <input type="text" name="agent_phone" placeholder="(xxx)-xxx-xxxx">
                 </div>
                 <div>
-                    <label for=""></label>
+                    <label for="news">Newspaper</label>
+                    <input type="radio" name="ref" id="news">
+
+                    <label for="sign">Sign</label>
+                    <input type="radio" name="ref" id="sign">
+
+                    <label for="internet">Internet</label>
+                    <input type="radio" name="ref" id="internet">
+
+                    <span id="other_section">
+                        <label for="other">Other</label>
+                        <input type="radio" name="ref" id="other">
+                        <input type="text" name="other_source" id="other_source" placeholder="Other Source">
+                    </span>
                 </div>
             </div>
 
         </section>
+
+        <section>
+            <div id="applicant_info">
+                <h3>Applicant Info</h3>
+                <label for="app_name">Applicant's Name</label>
+                <input type="text" id="app_name" placeholder="First, Middle, Last">
+                <div id="co_app_check">
+                    <span>Is there a co-applicant?</span>
+                    <label for="co_app_y">Yes</label>
+                    <input type="radio" name="co_app" value="yes" id="co_app_y">
+                    <label for="co_app_n">No</label>
+                    <input type="radio" name="co_app" value="yes" id="co_app_n">
+                </div>
+                <div>
+                    <label for="app_name_type">Applicant's Former Last Name</label>
+                    <select name="app_name_type" id="app_name_type">
+                        <option value="maiden">Maiden</option>
+                        <option value="married">Married
+                        <option value="na">Not Applicable</option>
+                    </select>
+                    <input type="text" name="app_fmr_name" id="app_fmr_name" placeholder="Former last name">
+                </div>
+                <div id="app_phone_info">
+
+                        <label for="app_email">Email</label>
+                        <input type="email" name="app_email" id="app_email" placeholder="youremail@email.com">
+
+                        <label for="app_home">Home Phone</label>
+                        <input type="text" name="app_home" id="app_home" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_home">Work Phone</label>
+                        <input type="text" name="app_home" id="app_work" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_mobile">Mobile Phone</label>
+                        <input type="text" name="app_mobile" id="app_mobile" placeholder="(xxx)-xxx-xxxx">
+
+                </div>
+
+
+                    <label for="app_ssn">Soc. Sec. No.</label>
+                    <input type="password" id="app_ssn" placeholder="xxx-xx-xxxx">
+
+                    <span>
+                        <label for="app_dl_num">Drivers License No.</label>
+                        <input type="text" id="app_dl_num" placeholder="xxxxxxxxx">
+                        <span>in</span>
+                        <select name="dl_state" id="dl_state" >
+                            <option value="TX" selected>TX</option>
+                            <option value="AL">AL</option>
+                            <option value="FL">FL</option>
+                            <option value="OH">OH</option>
+                        </select>
+                    </span>
+
+                        <label for="app_dob">Date of Birth</label>
+                        <input type="text" id="app_dob" name="app_dob" placeholder="mm/dd/yyyy">
+
+
+                    <label for="app_height">Height(in.)</label>
+                    <input type="number" name="app_height" id="app_height" placeholder="xx">
+
+                    <label for="app_weight">Weight(lbs.)</label>
+                    <input type="number" name="app_weight" id="app_weight" placeholder="xxx">
+
+                    <label for="app_eye_clr">Eye Color</label>
+                    <input type="text" name="app_eye_clr" id="app_eye_clr" placeholder="color">
+
+                    <label for="app_hair_clr">Eye Color</label>
+                    <input type="text" name="app_hair_clr" id="app_hair_clr" placeholder="color">
+
+                    <label for="app_mar_status">Marital Status</label>
+                    <select name="app_mar_status" id="app_mar_status">
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                    </select>
+
+                    <label for="app_citizen">Citizenship</label>
+                    <input type="text" name="app_citizen" id="app_citizen" value="USA">
+
+                </div>
+        </section>
+
+        <section>
+            <div  id="app_ICE">
+                <h3>Emergency Contact:</h3>
+
+                <label for="app_ICE_name">Name:</label>
+                <input type="text" name="app_ICE_name" id="app_ICE_name">
+
+                <label for="app_ICE_add">Address:</label>
+                <input type="text" name="app_ICE_name" id="app_ICE_add">
+
+                <label for="app_ICE_phone">Phone:</label>
+                <input type="text" name="app_ICE_phone" id="app_ICE_phone">
+
+                <label for="app_ICE_email">Email:</label>
+                <input type="email" name="app_ICE_email" id="app_ICE_email">
+            </div>
+        </section>
+
+        <section>
+            <div id="app_other_occupants">
+                <h3>Name all other persons who will occupy the property:</h3>
+                <div id="occ_01">
+                    <label for="occ_name1">Name</label>
+                    <input type="text" name="occ_name1" id="occ_name1" placeholder="First, Last">
+                    <label for="occ_rel1">Relationship</label>
+                    <input type="text" name="occ_rel1" id="occ_rel1" placeholder="i.e. father, son, friend">
+                    <label for="occ_age1">Age</label>
+                    <input type="number" name="occ_age1" id="occ_age1" placeholder="xx">
+                </div>
+                <div id="occ_02">
+                    <label for="occ_name2">Name</label>
+                    <input type="text" name="occ_name2" id="occ_name2" placeholder="First, Last">
+                    <label for="occ_rel2">Relationship</label>
+                    <input type="text" name="occ_rel2" id="occ_rel2" placeholder="i.e. father, son, friend">
+                    <label for="occ_age2">Age</label>
+                    <input type="number" name="occ_age2" id="occ_age2" placeholder="xx">
+                </div>
+                <div id="occ_03">
+                    <label for="occ_name3">Name</label>
+                    <input type="text" name="occ_name1" id="occ_name3" placeholder="First, Last">
+                    <label for="occ_rel3">Relationship</label>
+                    <input type="text" name="occ_rel3" id="occ_rel3" placeholder="i.e. father, son, friend">
+                    <label for="occ_age3">Age</label>
+                    <input type="number" name="occ_age3" id="occ_age3" placeholder="xx">
+                </div>
+                <div id="occ_04">
+                    <label for="occ_name4">Name</label>
+                    <input type="text" name="occ_name4" id="occ_name4" placeholder="First, Last">
+                    <label for="occ_rel4">Relationship</label>
+                    <input type="text" name="occ_rel4" id="occ_rel4" placeholder="i.e. father, son, friend">
+                    <label for="occ_age4">Age</label>
+                    <input type="number" name="occ_age4" id="occ_age4" placeholder="xx">
+                </div>
+            </div>
+            <section id="app_history">
+                <div class="spacer" id="app_cur">
+                    <!--address-->
+                    <label for="app_cur_add">Applicant's Current Address</label>
+                    <input type="text" name="app_cur_add" id="app_cur_add" placeholder="Street">
+                    <label for="app_cur_add_a">Apt:</label>
+                    <input type="number" name="app_cur_add_a" id="app_cur_add_a" placeholder="xxx">
+                    <input type="text" name="app_cur_add_b" id="app_cur_add_b" placeholder="City, State, Zip">
+
+                    <!--Landlord info-->
+                    <div id="cur_ll_info">
+                        <label for="app_cur_ll">Landlord Name:</label>
+                        <input type="text" id="app_cur_ll" name="app_cur_ll" placeholder="First, Last">
+
+                        <label for="app_cur_ll_email">Email:</label>
+                        <input type="text" id="app_cur_ll_email" name="app_cur_ll_email" placeholder="youremail@email.com">
+
+                        <label for="app_cur_ll_phone_d">Phone: <em>Day</em></label>
+                        <input type="number" name="app_cur_ll_phone_d" id="app_cur_ll_phone_d" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_cur_ll_phone_n"><em>Nt:</em></label>
+                        <input type="number" name="app_cur_ll_phone_n" id="app_cur_ll_phone_n" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_cur_ll_phone_m"><em>Mb:</em></label>
+                        <input type="number" name="app_cur_ll_phone_m" id="app_cur_ll_phone_m" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_cur_ll_phone_f"><em>Fax:</em></label>
+                        <input type="number" name="app_cur_ll_phone_f" id="app_cur_ll_phone_f" placeholder="(xxx)-xxx-xxxx">
+                    </div>
+                    <div>
+                        <label for="app_cur_move_in"><em>Move in Date:</em></label>
+                        <input type="text" name="app_cur_move_in" id="app_cur_move_in" placeholder="mm/dd/yyyy">
+
+                        <label for="app_cur_move_out"><em>Move Out Date:</em></label>
+                        <input type="text" name="app_cur_move_out" id="app_cur_move_out" placeholder="mm/dd/yyyy">
+
+                        <label for="app_cur_rent"><em>Rent:</em></label>
+                        <input type="number" name="app_cur_rent" id="app_cur_rent" placeholder="$">
+
+                        <label for="app_cur_reason">Reason for Move:</label>
+                        <textarea name="app_cur_reason" id="app_cur_reason" cols="15" rows="3"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="spacer" id="app_prev">
+
+                    <!--previous address-->
+                    <label for="app_prev_add">Applicant's Previous Address</label>
+                    <input type="text" name="app_prev_add" id="app_prev_add" placeholder="Street">
+                    <label for="app_prev_add_a">Apt:</label>
+                    <input type="number" name="app_prev_add_a" id="app_prev_add_a" placeholder="xxx">
+                    <input type="text" name="app_prev_add_b" id="app_prev_add_b" placeholder="City, State, Zip">
+
+                    <!--Landlord info-->
+                    <div id="prev_ll_info">
+                        <label for="app_prev_ll">Landlord Name:</label>
+                        <input type="text" id="app_prev_ll" name="app_prev_ll" placeholder="First, Last">
+
+                        <label for="app_prev_ll_email">Email:</label>
+                        <input type="text" id="app_prev_ll_email" name="app_prev_ll_email" placeholder="youremail@email.com">
+
+                        <label for="app_prev_ll_phone_d">Phone: <em>Day</em></label>
+                        <input type="number" name="app_prev_ll_phone_d" id="app_prev_ll_phone_d" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_prev_ll_phone_n"><em>Nt:</em></label>
+                        <input type="number" name="app_prev_ll_phone_n" id="app_prev_ll_phone_n" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_prev_ll_phone_m"><em>Mb:</em></label>
+                        <input type="number" name="app_prev_ll_phone_m" id="app_prev_ll_phone_m" placeholder="(xxx)-xxx-xxxx">
+
+                        <label for="app_prev_ll_phone_f"><em>Fax:</em></label>
+                        <input type="number" name="app_prev_ll_phone_f" id="app_prev_ll_phone_f" placeholder="(xxx)-xxx-xxxx">
+                    </div>
+                    <div>
+                        <label for="app_prev_move_in"><em>Move in Date:</em></label>
+                        <input type="text" name="app_prev_move_in" id="app_prev_move_in" placeholder="mm/dd/yyyy">
+
+                        <label for="app_prev_move_out"><em>Move Out Date:</em></label>
+                        <input type="text" name="app_prev_move_out" id="app_prev_move_out" placeholder="mm/dd/yyyy">
+
+                        <label for="app_prev_rent"><em>Rent:</em></label>
+                        <input type="number" name="app_prev_rent" id="app_prev_rent" placeholder="$">
+
+                        <label for="app_prev_reason">Reason for Move:</label>
+                        <textarea name="app_prev_reason" id="app_prev_reason" cols="15" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="spacer" id="app_cur_employ">
+                    <div id="app_cur_employer">
+
+                        <!--previous address-->
+                        <label for="app_cur_emp">Current Employer Address</label>
+                        <input type="text" name="app_cur_emp" id="app_cur_emp" placeholder="Street">
+                        <label for="app_cur_emp_a">Apt:</label>
+                        <input type="number" name="app_cur_emp_a" id="app_cur_emp_a" placeholder="xxx">
+                        <input type="text" name="app_cur_emp_b" id="app_cur_emp_b" placeholder="City, State, Zip">
+
+                        <!--Landlord info-->
+                        <div id="work_info">
+                            <label for="app_cur_sup">Landlord Name:</label>
+                            <input type="text" id="app_cur_sup" name="app_cur_sup" placeholder="First, Last">
+
+
+                            <label for="app_cur_sup_phone_d">Phone:</label>
+                            <input type="number" name="app_cur_sup_phone" id="app_cur_sup_phone_d" placeholder="(xxx)-xxx-xxxx">
+
+                            <label for="app_cur_sup_phone_f"><em>Fax:</em></label>
+                            <input type="number" name="app_cur_sup_phone_f" id="app_cur_sup_phone_f" placeholder="(xxx)-xxx-xxxx">
+
+                            <label for="app_cur_sup_email">Email:</label>
+                            <input type="text" id="app_cur_sup_email" name="app_cur_sup_email" placeholder="youremail@email.com">
+                        </div>
+                        <div>
+                            <label for="app_emp_start"><em>Move in Date:</em></label>
+                            <input type="text" name="app_emp_start" id="app_emp_start" placeholder="mm/dd/yyyy">
+
+                            <label for="app_emp_inc">Gross Monthly Income</label>
+                            <input type="number" name="app_emp_inc" id="app_emp_inc" placeholder="$">
+
+                            <label for="app_emp_pos">Position: </label>
+                            <input name="app_emp_pos" id="app_emp_pos" type="text">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Clear Form</button>
+        </div>
+
 
     </form>
     </main>
