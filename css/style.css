@@ -1,0 +1,68 @@
+
+/*----------------Headings----------------*/
+.fancy-header {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    text-decoration: underline;
+    color: white;
+}
+
+header>p {
+    text-align: center;
+}
+
+/*----------------Global----------------*/
+body {
+    background-color: transparent;
+    background-image: url("../img/ver_bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: darkgrey;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ td, tr th {
+    padding: 10px 20px 3px;
+    text-align: left;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.centered {
+    display: block;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*----------------Anchors----------------*/
+a:link {
+    color: whitesmoke;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+a:visited {
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+a:hover {
+    font-weight: bolder;
+    font-style: italic;
+}
+
+a:active {
+    color: darkred;
+}
+
+a {
+    padding: 10px;
+}

@@ -26,5 +26,5 @@ em {
 /*  selector for all "anchor" elements
     that are a direct child of an element with class="article" */
 .article>a {
-    float:right;
+    float: right;
 }
