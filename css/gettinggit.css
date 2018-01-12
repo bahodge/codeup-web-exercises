@@ -1,0 +1,155 @@
+/*font-family: 'Lobster', cursive;*/
+/*font-family: 'Hind', sans-serif;*/
+
+/*--------Global---------------*/
+
+body {
+    margin: 0px;
+    font-family: 'Hind', sans-serif;
+}
+
+.container {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+header, .pay-prompt {
+    margin-top: 0;
+    background-color: #FA4D3A;
+    color: white;
+    text-align: center;
+}
+
+main {
+
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 25px;
+    font-family: 'Lobster', cursive;
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 0px
+}
+
+
+
+.white {
+    color: white;
+}
+
+.red {
+    color: #FA4D3A;
+}
+
+a {
+    color: #FA4D3A;
+}
+
+.header-accent-h2 {
+    height: 10px;
+    width: 75px;
+    margin-top: 20px;
+    border-bottom: 3px solid #FA4D3A;
+    display: inline-block;
+}
+
+
+
+/*--------Button Behaviours---------------*/
+button:hover {
+    background: white;
+}
+
+.fancy-button {
+    height: 65px;
+    width: 200px;
+    display: inline-block;
+    background: #FA4D3A;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+
+.button-anchor {
+    font-size: 20px;
+    padding: 23px 12px 23px 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.button-anchor:hover {
+    color: #FA4D3A;
+}
+
+
+
+/*--------Header---------------*/
+
+header a {
+    color: white;
+    padding: 10px 0px 10px 0;
+}
+
+header a:hover {
+    color: whitesmoke;
+}
+
+.header-accent {
+    height: 10px;
+    width: 100px;
+    margin-top: 20px;
+    border-bottom: 5px solid white;
+    display: inline-block;
+}
+
+
+/*--------Main---------------*/
+
+main{
+    text-align: center;
+}
+
+.features {
+    position: relative;
+}
+
+.feature-sec {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 0px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.feature-sec:nth-child(4){
+
+    background: red;
+    position: relative;
+    clear: left;
+
+}
+/*--------Pay---------------*/
+
+.pay-header {
+    margin-top: 0px;
+    padding-top: 25px;
+
+}
+
+
+
+/*--------Footer---------------*/
+
+footer {
+    text-align: center;
+}

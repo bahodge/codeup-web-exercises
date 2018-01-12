@@ -1,0 +1,57 @@
+h1  {
+    margin-bottom: 50px;
+}
+
+.box {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    margin: 25px 25px;
+    border: 1px solid black;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    float:left;
+}
+
+.box>img {
+    position: absolute;
+    top: -35px;
+    right: -35px;
+}
+
+.ribbon {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+main .box:nth-child(3), main .box:nth-child(5) {
+    clear:left;
+
+}
+
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.violet {
+    background-color: violet;
+}
