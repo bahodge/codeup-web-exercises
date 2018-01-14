@@ -8,12 +8,7 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
-.container {
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 
-}
 
 header, .pay-prompt {
     margin-top: 0;
@@ -22,14 +17,11 @@ header, .pay-prompt {
     text-align: center;
 }
 
-main {
 
-}
-
-h1 {
+h1.title {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 25px;
+    padding-top: 15px;
     font-family: 'Lobster', cursive;
     font-size: 100px;
 }
@@ -94,6 +86,21 @@ button:hover {
 
 /*--------Header---------------*/
 
+.login {
+    font-size: 25px;
+    margin: 0;
+    padding: 5px 10px;
+
+    position: absolute;
+    text-decoration: none;
+    font-weight: bold;
+    background: #FF6B64;
+
+    right: 50px;
+    top: 20px;
+
+}
+
 header a {
     color: white;
     padding: 10px 0px 10px 0;
@@ -114,38 +121,62 @@ header a:hover {
 
 /*--------Main---------------*/
 
-main{
-    text-align: center;
+.video {
+    margin-left: 0;
+    padding-left: 0;
 }
 
-.features {
-    position: relative;
+
+
+.container {
+    width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-sizing: border-box;
+
 }
+
 
 .feature-sec {
+    height: 250px;
     width: 200px;
-    height: 300px;
-    margin: 0 auto;
-    padding: 0px;
-    display: inline-block;
-    border: 1px solid black;
+    margin: 20px 10px;
+    position: relative;
+    float: left;
+}
+
+.feature-sec h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .feature-sec:nth-child(4){
 
-    background: red;
-    position: relative;
     clear: left;
-
 }
+
+.pay-prompt {
+    margin-top: 20px;
+    clear: left;
+}
+
+
 /*--------Pay---------------*/
 
 .pay-header {
-    margin-top: 0px;
-    padding-top: 25px;
 
+    padding-top: 20px;
+}
+.header-accent-h2 {
+    padding-top: 0;
+    margin-top: 0;
 }
 
+.ender-para{
+    padding-bottom: 30px;
+}
 
 
 /*--------Footer---------------*/
