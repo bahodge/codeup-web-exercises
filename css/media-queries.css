@@ -58,6 +58,10 @@ img {
 
 @media screen and (min-width: 550px) {
 
+    body {
+        margin: 10px;
+    }
+
     .hidden-on-desktop {
         display: none;
     }
@@ -82,6 +86,7 @@ img {
         background: red;
         padding: 10px 10px;
         margin: 5px;
+
     }
 
     img {
@@ -112,6 +117,8 @@ img {
         float: left;
         color: black;
         display: block;
+        position: relative;
+        left: 50px;
 
     }
 
