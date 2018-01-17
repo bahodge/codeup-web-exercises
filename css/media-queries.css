@@ -1,0 +1,163 @@
+/*Mobile first base settings
+-------------------------------*/
+
+body {
+    margin: 5px;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+}
+
+p {
+    text-align: left;
+}
+
+
+.alert-info, .hidden-on-desktop {
+    background: lightblue;
+    padding: 3%;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.nav-links li {
+    text-align: center;
+    list-style-type: none;
+    background: gray;
+    padding: 3%;
+    margin: 10px auto;
+}
+
+img {
+    width: 339px;
+    height: 224px;
+}
+
+.header-img {
+    text-align: center;
+}
+
+.sub-section p {
+    font-style: italic;
+}
+
+/*Mobile first base settings
+-------------------------------*/
+
+
+
+/*Tablet Version
+----------------------------*/
+
+@media screen and (min-width: 550px) {
+
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    h1 {
+        color: red;
+        text-align: left;
+    }
+
+    ul {
+        text-align: left;
+        display: inline-block;
+        padding-right: 0;
+        margin: 0;
+        position: fixed;
+        top: 25px;
+        right: 0;
+
+    }
+
+    .nav-links li {
+        background: red;
+        padding: 10px 10px;
+        margin: 5px;
+    }
+
+    img {
+
+        width: 80%;
+        height: 100%;
+    }
+
+    .header-img {
+        clear: left;
+        display: block;
+    }
+
+
+}
+
+/*Tablet Version
+----------------------------*/
+/*Desktop version
+-------------------------------*/
+@media screen and (min-width: 890px) {
+
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    h1 {
+        float: left;
+        color: black;
+        display: block;
+
+    }
+
+    ul {
+        text-align: center;
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 25px;
+        padding: 15px;
+        float: right;
+        position: static;
+    }
+
+    .nav-links li {
+        display: inline;
+        background: transparent;
+        padding: 5px 15px;
+        margin: 0;
+    }
+
+    .header-img {
+        clear: both;
+    }
+
+    img {
+        width: 890px;
+        height: 385px;
+    }
+
+    .main {
+        float: left;
+        width: 60%;
+        margin-left: 20px;
+    }
+
+    .sub-section {
+        float: right;
+        width: 25%;
+        margin-right: 20px;
+    }
+
+    footer {
+        clear: both;
+    }
+
+}
+
+/*Desktop version
+-------------------------------*/

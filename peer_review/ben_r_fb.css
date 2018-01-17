@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+a {
+    color: white;
+}
+
+.top-page {
+    height: 580px;
+    width: 100%;
+    border-top: 5px solid #166489;
+    background-color: #cf4546;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.getting-git {
+    font-family: Pacifico, sans-serif;
+    font-size: 100px;
+    position: relative;
+    margin: 50px 0 50px 0;
+}
+
+.transparent-text {
+    opacity: .7;
+}
+
+.hr-top {
+    border: none;
+    background-color: white;
+    position: relative;
+    height: 2px;
+    width: 4%;
+    margin: 0 auto 30px;
+}
+
+.first-line {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.login-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.23);
+    padding: 3px 8px;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Times New Roman', sans-serif;
+    font-size: large;
+    text-decoration: underline;
+}
+
+.login-button:hover {
+    opacity: .7;
+    -webkit-transition: all .35s;
+}
+
+.purchase-button {
+    font-size: 15px;
+    border: 2px solid white;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 300px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    background: transparent;
+    position: relative;
+    box-shadow: inset 7px -8px 0 #166489;
+}
+
+.purchase-button:hover {
+    -webkit-transition: all .35s;
+    box-shadow: inset 7px -8px 0 #166489;
+    border: 2px solid #166489;
+    background: white;
+    color: #cf4546;
+}
+
+.second-line {
+    font-size: 17px;
+}
+
+.course-intro:hover {
+    opacity: .7;
+    -webkit-transition: all .35s;
+}
+/* top portion of page END
+--------------------------------------------------
+--------------------------------------------------
+middle portion of page START*/
+.middle-page {
+    position: relative;
+    text-align: center;
+}
+
+.course-introduction {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.1;
+    font-weight: 100;
+    font-size: 30px;
+    margin: 60px 0 20px 0;
+}
+
+.hr-middle {
+    border: none;
+    background-color: #5796cf;
+    position: relative;
+    height: 2px;
+    width: 4%;
+    margin: 0 auto 20px;
+}
+
+.text-under-video {
+    margin-top: 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    opacity: .7;
+}
+
+.red-link {
+    text-decoration: none;
+    color: red;
+}
+
+.red-link:hover {
+    text-decoration: underline red;
+    opacity: .7;
+    -webkit-transition: all .35s;
+}
+/* middle portion of page END
+--------------------------------------------------
+--------------------------------------------------
+bottom middle portion of page START*/
+.course-overview-section {
+    position: relative;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.course-overview {
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.1;
+    font-weight: 100;
+    font-size: 30px;
+    margin: 60px 0 20px 0;
+}
+
+.hr-middle-bottom {
+    border: none;
+    background-color: #cf4546;
+    position: relative;
+    height: 2px;
+    width: 4%;
+    margin: 0 auto 30px;
+}
+
+.bottom-p {
+    margin: 0 auto;
+    margin-bottom: 45px;
+    width: 50%;
+}
+/* bottom middle portion of page END
+--------------------------------------------------
+--------------------------------------------------
+near bottom page START*/
+.near-bottom-page {
+    font-family: 'Nunito', sans-serif;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.paragraph-boxes {
+    line-height: 1.7;
+    font-size: 16px;
+    height: 200px;
+    width: 250px;
+    text-align: left;
+    margin: 0 30px 30px 0;
+    position: relative;
+    left: 327px;
+    float: left;
+}
+
+.code-block {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px
+}
+
+.bottom-page h1 {
+    font-size: 25px;
+    align-content: center;
+}
+
+.paragraph-boxes:nth-child(4) {
+    clear: left;
+}
+/* near bottom page END
+--------------------------------------------------
+--------------------------------------------------
+near bottom 2 START*/
+.near-bottom-2 {
+    font-family: Nunito, sans-serif;
+    position: relative;
+    top: 70px;
+    height: 330px;
+    width: 100%;
+    border-top: 5px solid #166489;
+    background-color: #cf4546;
+    text-align: center;
+    color: white;
+    clear: both;
+}
+
+.get-started {
+    font-size: 30px;
+    position: relative;
+    margin: 45px 0 20px 0;
+}
+
+.hr-near-bottom-2 {
+    border: none;
+    background-color: white;
+    position: relative;
+    height: 2px;
+    width: 4%;
+    margin: 0 auto 20px;
+}
+
+.near-bottom-2-p-1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.bottom-purchase {
+    margin-bottom: 20px;
+}
+/* near bottom page END
+--------------------------------------------------
+--------------------------------------------------
+bottom page START*/
+.bottom-page {
+    font-family: Nunito, sans-serif;
+    position: relative;
+    top: 100px;
+    height: 230px;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+.h1-bottom {
+    font-size: 30px;
+    position: relative;
+    margin: 45px 0 20px 0;
+}
+
+.hr-bottom {
+    border: none;
+    background-color: #cf4546;
+    position: relative;
+    height: 2px;
+    width: 4%;
+    margin: 0 auto 20px;
+}
+
+.bottom-p-2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
