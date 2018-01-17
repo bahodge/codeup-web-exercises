@@ -63,29 +63,32 @@ a {
 /*--------Button Behaviours---------------*/
 button:hover {
     background: white;
+    color: #FA4D3A;
 }
 
 .fancy-button {
     height: 65px;
     width: 200px;
-    display: inline-block;
     background: #FA4D3A;
     border: 2px solid white;
     border-radius: 30px;
-}
-
-.button-anchor {
     font-size: 20px;
-    padding: 23px 12px 23px 12px;
     font-weight: bold;
-    text-decoration: none;
     color: white;
-    position: relative;
 }
 
-.button-anchor:hover {
-    color: #FA4D3A;
-}
+/*.button-anchor {*/
+    /*font-size: 20px;*/
+    /*padding: 23px 12px 23px 12px;*/
+    /*font-weight: bold;*/
+    /*text-decoration: none;*/
+    /*color: white;*/
+    /*position: relative;*/
+/*}*/
+
+/*.button-anchor:hover {*/
+    /*color: #FA4D3A;*/
+/*}*/
 
 
 

@@ -1,0 +1,74 @@
+/*-----------------------Global-------------------------------*/
+
+body {
+    margin: 0;
+}
+
+
+/*-----------------------Header-------------------------------*/
+
+.ribbon {
+    background: #2342b4;
+    height: 80px;
+    color: white;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.title-div {
+    height: 40px;
+    width: 140px;
+    padding-top: 25px;
+    position: relative;
+    float: left;
+    left: 75px;
+}
+
+.login-div {
+    float: right;
+    position: relative;
+    top: 40px;
+    right: 50px;
+}
+
+.email-phone-label {
+    position: absolute;
+    top: -20px;
+    right: 395px;
+    color: white;
+}
+
+.pass-label {
+    position: relative;
+    bottom: 20px;
+    left: 35px;
+}
+
+#pass-input {
+    position: relative;
+    right: 30px;
+}
+
+.login-btn {
+    background-color: #274deb;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px;
+
+    position: relative;
+    right: 20px;
+}
+
+.login-btn:hover {
+    background-color: #18318b;
+}
+
+.forgot-pass {
+    position: relative;
+    float: right;
+}
