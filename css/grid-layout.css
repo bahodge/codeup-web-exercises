@@ -13,6 +13,10 @@
     margin-bottom: 5%;
 }
 
+.large-margin {
+    margin-top: 5em;
+}
+
 .row:after {
     content: "";
     display: table;
