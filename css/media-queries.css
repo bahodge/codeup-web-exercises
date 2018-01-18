@@ -204,7 +204,7 @@ row:after {
 .desk-large-col,
 .desk-small-col {
     float: left;
-    width: 100%;
+    /*width: 100%;*/
     /*border: 1px solid black;*/
     /*background-color: lightgrey;*/
 }

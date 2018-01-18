@@ -1,0 +1,126 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: .7em;
+}
+
+/*----------------Rows!-----------------------*/
+.row {
+    width: 100%;
+    margin-bottom: 1em;
+    border: 1px solid black;
+}
+
+.large-margin {
+    margin-top: 5em;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*----------------COLUMNS-----------------------*/
+
+.full-col,
+.half-col,
+.one-quarter-col,
+.one-third-col,
+.two-thirds-col,
+.divider        {
+    float: left;
+    padding: 0 .3em;
+}
+
+/*Halves*/
+.full-col {
+    width: 100%;
+}
+
+.half-col {
+    width: 50%;
+}
+
+/*Thirds*/
+.two-thirds-col {
+    width: 66.66%;
+}
+
+.one-third-col {
+    width: 33.33%
+}
+
+/*Quarters*/
+
+.one-quarter-col {
+    width: 25%;
+}
+
+/*-----------------ELEMENTS-----------------*/
+
+img {
+    width: 100%;
+}
+
+
+
+
+
+
+/*-----------------Classes-----------------*/
+
+
+/*---------HEADER LINKS-------------------*/
+
+.nav-links {
+    padding: 0;
+    text-align: center;
+}
+
+.nav-links>li {
+    list-style: none;
+    display: inline;
+}
+
+/*---------TOP SECTION MAIN STORY------*/
+
+.top-sec-main {
+    padding: 0;
+    text-align: left;
+}
+
+.top-sec-main li {
+    list-style-type: none;
+    margin: .5em;
+}
+
+.top-sec-sub {
+    text-align: left;
+    width: 100%;
+}
+
+.divider {
+    width: 100%;
+}
+
+.divider h3, .divider p {
+    display: inline;
+}
+
+/*---------TOP MID SECTION---------------*/
+
+
+
+
+
+
