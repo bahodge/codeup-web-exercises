@@ -1,3 +1,48 @@
-body {
-    border-sizing: border-box;
+*   {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.row {
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.half-col,
+.third-col,
+.fourth-col,
+.eighth-col {
+    float: left;
+    width: 100%;
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
+@media screen and (min-width: 800px){
+    .half-col {
+        width: 50%;
+    }
+
+    .third-col {
+        width: 33.33%;
+    }
+
+    .fourth-col {
+        width: 25%;
+    }
+
+    .eighth-col {
+        width: 12.5%;
+    }
 }

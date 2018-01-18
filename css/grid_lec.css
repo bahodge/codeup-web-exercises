@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 h3, h1  {
     text-align: center;
 }
@@ -6,8 +10,6 @@ h3, h1  {
     margin: 0 auto;
     width: 80%;
     max-width: 1200px;
-
-    box-sizing: border-box;
 }
 
 .row {
@@ -24,7 +26,6 @@ h3, h1  {
 .medium-column,
 .small-column {
     float: left;
-    width: 100%;
 }
 
 @media screen and (min-width: 760px){
