@@ -6,13 +6,9 @@
 
 ShowColor("orange");
 
+
 var number = prompt("Choose a number");
-
 IsPrime(number);
-
-
-
-
 
 
 
