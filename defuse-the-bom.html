@@ -13,7 +13,9 @@
 (function() {
     "use strict";
 
-    var detonationTimer = 5;
+    var detonationTimer = 4;
+
+    // TODO: Remain looking cool - [x] -> Complete
 
     // TODO: This function needs to be called once every second
 
@@ -23,7 +25,8 @@
     function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
-            document.body.innerHTML = '';
+            document.body.innerHTML = '<h1>BOOOOOOOOOOOOOOMMMMMMMMM!!!!</h1>';
+            // document.getElementById('timer').innerHTML = detonationTimer;
         } else if (detonationTimer > 0) {
             console.log (detonationTimer);
             document.getElementById('timer').innerHTML = detonationTimer;
@@ -34,6 +37,7 @@
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
+        console.log("You defused the bomb!");
         clearInterval(intervalId);
     }
     // Don't modify anything below this line!
