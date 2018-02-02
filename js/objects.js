@@ -154,10 +154,13 @@
      *      ...
      */
 
+    var output = "";
     function showBookInfo(array){
         for (var i = 0; i < array.length; i++){
-            console.log("Book #" + (i + 1) + "\nAuthor: " + books[i].author + "\nTitle: " + books[i].title + "\n---");
+            output = ("Book #" + (i + 1) + "\nAuthor: " + books[i].author + "\nTitle: " + books[i].title + "\n---");
         }
+        console.log(output);
+        return output;
     }
 
 
@@ -190,4 +193,40 @@
 
 
 
+    // var coolNames = [
+    //
+    //     {
+    //         firstName: "Ben",
+    //         lastName: "Hodge"
+    //     },
+    //
+    //     {
+    //         firstName: "Steven",
+    //         lastName: "Garis"
+    //     },
+    //     {
+    //         firstName: "Ben",
+    //         lastName: "Garis"
+    //     },
+    //     {
+    //         firstName: "Steven",
+    //         lastName: "Hodge"
+    //     }
+    //
+    // ];
+    //
+    // //ADD NEW PROPERTY TO EACH ELEMENT
+    // coolNames.forEach(function(name){
+    //     name.middleName = "Derpington";
+    // });
+    //
+    //
+    // console.log(coolNames);
+    //
+    // coolNames.forEach(function(name){
+    //     delete name.middleName;
+    // });
+    //
+    // console.log (coolNames);
+    // return coolNames;
 })();
