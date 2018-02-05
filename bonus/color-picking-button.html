@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Color</title>
+    <style type="text/css">
+        img {
+            width: 50%;
+            margin-left:25%;
+            opacity:.5;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    var colorHex = ['a','b','c','d','e','f','0','1','2','3','4','5','6','7','8','9','0'];
+    var randomColor = [];
+    function getRandomColor(){
+        do{
+            randomNum = Math.round(Math.random()*12);
+            randomNum = randomNum.toString();
+            randomColor.push(colorHex[randomNum])
+        }
+        while(randomColor.length!=6);
+        randomColor = '#' + randomColor.join('')
+        document.bgColor = randomColor ;
+        randomColor = []
+
+    }
+    setInterval(getRandomColor,100);
+</script>
+</body>
+</html>
