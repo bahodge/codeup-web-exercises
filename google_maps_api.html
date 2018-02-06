@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Maps API</title>
+    <style>
+        #map {
+            margin: 0 auto;
+            height: 500px;
+            width: 80%;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="map"></div>
+<!--<img src="./img/pizza-icon.png" alt="pizza icon!" id="pizza-icon">-->
+
+
+
+<!--Newer Key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4toEzfql7LNIGkkRr4MKMIHwJ-gMHzY"></script>
+<!--AIzaSyDY4toEzfql7LNIGkkRr4MKMIHwJ-gMHzY-->
+<script>
+    // (function(){
+
+        "use strict";
+
+        var mapDisplay = document.getElementById('map');
+
+        var mapOptions = {
+            zoom: 15,
+            center: {
+                lat: 29.426791,
+                lng: -98.489602
+            }
+        };
+
+
+
+
+
+
+        //Instantiate new map. Requires properties.
+        var map = new google.maps.Map(mapDisplay, mapOptions);
+        var favoriteRestaurant = "Mod Pizza San Antonio";
+
+
+        var goodRestaurants = [
+            {
+                name: "Mod Pizza",
+                searchTerms: 'Mod Pizza San Antonio'
+            },
+            {
+                name: 'BJ\'s Bar and Grill',
+                searchTerms: 'BJ Bar and Grill San Antonio'
+            },
+            {
+                name: 'India Oven',
+                searchTerms: 'India Oven San Antonio'
+            }
+        ];
+
+        showFavRestaurant(favoriteRestaurant);
+
+
+
+        function showSomeRestauraunts (arrayOfLocations) {
+            var coder = new google.maps.Geocoder();
+            goodRestaurants.forEach(function (restaurant) {
+                coder.geocode({
+                    address: restaurant.searchTerms,
+                    componentRestrictions: {
+                        country: 'US'
+                    }
+                }, function (results, status){
+                    if (status === 'OK'){
+                        restaurant.coords = {};
+                        restaurant.coords.lat = results[0].geometry.location.lat();
+                        restaurant.coords.lng = results[0].geometry.location.lng();
+
+                        var mark = new google.maps.Marker({
+                            position: results[0].geometry.location,
+                            animation: google.maps.Animation.DROP,
+                            map: map,
+                            title: restaurant.name
+                        });
+                        var infowindow = new google.maps.InfoWindow({
+                            content: restaurant.name,
+                            maxWidth: 200
+                        });
+                        mark.addListener('click', function() {
+                            infowindow.open(map, mark);
+                        });
+                    }
+                });
+            });
+
+            map.setZoom(12);
+            setTimeout(findAverageCoord, 100);
+
+            // map.setCenter({lat: 29.61372803333333, lng:-98.47043059999999});
+
+        }
+
+
+
+
+        function findAverageCoord() {
+
+            console.log(goodRestaurants[0].coords.lat);
+
+            var avgCoords = {
+                avgLat: (goodRestaurants[0].coords.lat + goodRestaurants[1].coords.lat + goodRestaurants[2].coords.lat)/ 3,
+
+                avgLng: (goodRestaurants[0].coords.lng + goodRestaurants[1].coords.lng +goodRestaurants[2].coords.lng)/ 3
+            };
+
+            map.setCenter({lat: avgCoords.avgLat, lng: avgCoords.avgLng});
+
+        }
+
+
+
+        function showFavRestaurant (someAddress) {
+            var coder = new google.maps.Geocoder();
+            coder.geocode({
+                address: someAddress,
+                componentRestrictions: {
+                    country: 'US',
+                    postalCode: '78258'
+                }
+            }, function(results, status){
+                if (status === 'OK'){
+
+                    map.setCenter (results[0].geometry.location);
+                    map.setZoom(18);
+
+                    var mark = new google.maps.Marker({
+                        position: results[0].geometry.location,
+                        animation: google.maps.Animation.DROP,
+                        map: map,
+                        title: 'Mod Pizza'
+                    });
+
+
+
+                    //Bonuses
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<h2>My Favorite Restaurant is Mod Pizza</h2>' +
+                        '<p>They make custom made pizzas quickly. You can also overload your pizza if you would like to as well.</p>' +
+                        '<p>The staff is also very friendly</p>' +
+                        '<a href="https://modpizza.com/locations/stone-oak/">Website</a>',
+                        maxWidth: 200
+                    });
+                    mark.addListener('click', function() {
+                        infowindow.open(map, mark);
+                    });
+                }
+            });
+        }
+
+
+    // })();
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
