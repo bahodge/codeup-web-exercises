@@ -8,8 +8,8 @@
     <style type="text/css">
         #map {
             margin: 0 auto;
-            width: 800px;
-            height: 300px;
+            width: 500px;
+            height: 500px;
         }
     </style>
 
@@ -19,13 +19,23 @@
 <!-- div to hold map -->
 <div id="map"></div>
 
+<form action="#">
+    <label for="address-input">Address:</label>
+    <input type="text" id="address-input" name="address-input">
+    <button onclick="codeAddress(addressSearch)">Click me</button>
+</form>
+
 <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBks5j2CXGs5apHQ56aAlZtAzBjLINVqYw"></script>
 
 <!-- Script to show address on map -->
 <script type="text/javascript">
-    (function() {
+    // (function() {
         "use strict";
+
+        var searchBtn = document.getElementById('btn-search');
+        var addressSearch = document.getElementById('address-input').innerText;
+
 
         //var that shows the map where to render
         var mapDisplay = document.getElementById('map');
@@ -40,9 +50,37 @@
         };
 
         //instantiated map
-        var map = new google.maps.Map(mapDisplay, settings);
+    var map = new google.maps.Map(mapDisplay, settings);
 
-    })();
+    function codeAddress(someAddress) {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode( {address: someAddress}, function(results, status) {
+
+            console.log(results);
+
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
+    function unGeoCode(lat, lng){
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({location: {lat: lat, lng: lng}}, function (results, status) {
+            console.log(status);
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
+
+
+    // })();
 </script>
 
 
