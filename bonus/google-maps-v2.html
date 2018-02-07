@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps Integration V2</title>
+
+    <style>
+        #map {
+
+            margin: 1em auto;
+            height: 500px;
+            width: 95%;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .header-bar {
+            background: #2e6da4;
+            height: 3em;
+            margin-bottom: 3em;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .zoom-group {
+            height: 2em;
+            margin-bottom: 3em;
+        }
+
+        button.zoom {
+            color: white;
+            background-color: #5cb85c;
+            padding: 0.8em;
+            font-size: 1em;
+            margin-right: 1em;
+            border-radius: 15%;
+            box-shadow: #101010;
+
+        }
+
+    </style>
+</head>
+<body class="container">
+    <div class="header-bar">
+        <h1>Google Maps Integration V2</h1>
+    </div>
+
+    <div class="zoom-group">
+        <button data-zoom=10 class="zoom">Zoom x10</button>
+        <button data-zoom=15 class="zoom">Zoom x15</button>
+        <button data-zoom=18 class="zoom">Zoom x18</button>
+    </div>
+
+    <div class="address-field">
+        <input type="text" id="address" name="address" value="2337 Hiline Dr., Bulverde, TX 78163" placeholder="Enter Address to Search" size="50">
+    </div>
+
+    <div class="search-button">
+        <button id="get-address-button">Search</button>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4toEzfql7LNIGkkRr4MKMIHwJ-gMHzY"></script>
+    <script>
+        "use strict";
+        var addressInput = document.getElementById('address');
+        var getAddress = document.getElementById('get-address-button');
+        var mapDisplay = document.getElementById('map');
+
+
+        getAddress.addEventListener('click', function (){
+            var address = addressInput.value;
+            console.log(address);
+            mapInit(address);
+        });
+
+        var mapOptions = {
+            zoom: 15
+        };
+
+        var map = new google.maps.Map(mapDisplay, mapOptions);
+        var coder = new google.maps.Geocoder();
+
+
+        function mapInit(someAddress) {
+            coder.geocode ({address: someAddress}, function(results, status){
+                if (status === "OK"){
+                    console.log(status);
+                    map.setCenter(results[0].geometry.location);
+
+                   var mark = new google.maps.Marker({
+                       position: results[0].geometry.location,
+                       map: map
+                   });
+
+                } else {
+                    alert("Something went wrong " + status);
+                }
+            })
+        }
+
+        mapInit(addressInput.value);
+
+        //zoom buttons
+        var zoomButtons = document.getElementsByClassName('zoom');
+        zoomButtons = Array.from(zoomButtons);
+        zoomButtons.forEach(function (button) {
+            button.addEventListener('click', function(event){
+                var zoomLevel = event.target.getAttribute('data-zoom');
+                zoomLevel = parseInt(zoomLevel);
+                map.setZoom(zoomLevel);
+            });
+        });
+
+    </script>
+</body>
+</html>

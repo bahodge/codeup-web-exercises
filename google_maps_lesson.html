@@ -22,15 +22,16 @@
 
 <!-- Script to show address on map -->
 <script type="text/javascript">
-    (function() {
+    // (function() {
         "use strict";
 
         //var that shows the map where to render
         var mapDisplay = document.getElementById('map');
 
         var options = {
-            zoom: 8,
+            zoom: 20,
             center: {
+                //The alamo
                 lat: 29.4268,
                 lng: -98.4896
             }
@@ -38,8 +39,25 @@
         //Instantiate new map. Requires properties.
         var map = new google.maps.Map(mapDisplay, options);
 
+        //GEOCODE!!!! HUZZZAHHHH!!!!
 
-    })();
+        //instantiates a geocoder object
+        var geocoder = new google.maps.Geocoder();
+
+        function findGeocode(someAddress){
+            geocoder.geocode({address: someAddress}, function(result, status){
+                console.log(status);
+                console.log(result);
+            });
+            map.setCenter(result[0].geometry.location);
+        }
+
+
+
+
+
+
+    // })();
 </script>
 
 
