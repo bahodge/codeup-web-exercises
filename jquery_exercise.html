@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Jquery Exercise</h1>
+
+<div>
+</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ea est ex laudantium natus, neque quod repudiandae veniam. Ab asperiores blanditiis cumque delectus dolorum inventore itaque laborum magnam, natus nesciunt non optio perspiciatis porro quaerat quibusdam rem repellendus suscipit unde vero voluptatibus. Accusamus accusantium, corporis deserunt dolore, ducimus fuga fugit impedit incidunt laudantium nulla numquam quis reprehenderit suscipit unde vel. Aperiam aspernatur blanditiis, esse facilis illo magnam modi necessitatibus neque non nostrum officia possimus quae unde. Dolor dolores eligendi, impedit ipsum magnam odio quas quasi quidem repellat soluta. Aperiam distinctio eum molestiae necessitatibus possimus quasi repellat similique sit tenetur, voluptas!</p>
+
+<!--add jquery with CDN-->
+<script
+        src="http://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+
+<!--downloaded-->
+<!--<script src="./js/jquery-2.2.4.min.js"></script>-->
+
+
+<script>
+    $(document).ready(function() {
+
+        "use strict";
+
+        $('h1').html('LOOK AT THIS JQUERY!!!!');
+
+        var para = $('p');
+
+        var newDiv = $('div').append(para);
+
+
+
+    });
+
+</script>
+</body>
+</html>
