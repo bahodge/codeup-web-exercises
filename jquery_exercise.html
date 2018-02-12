@@ -6,11 +6,21 @@
 </head>
 <body>
 
-<h1>Jquery Exercise</h1>
+<h1 class="large-heading" id="main-heading">Jquery Exercise</h1>
 
-<div>
-</div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ea est ex laudantium natus, neque quod repudiandae veniam. Ab asperiores blanditiis cumque delectus dolorum inventore itaque laborum magnam, natus nesciunt non optio perspiciatis porro quaerat quibusdam rem repellendus suscipit unde vero voluptatibus. Accusamus accusantium, corporis deserunt dolore, ducimus fuga fugit impedit incidunt laudantium nulla numquam quis reprehenderit suscipit unde vel. Aperiam aspernatur blanditiis, esse facilis illo magnam modi necessitatibus neque non nostrum officia possimus quae unde. Dolor dolores eligendi, impedit ipsum magnam odio quas quasi quidem repellat soluta. Aperiam distinctio eum molestiae necessitatibus possimus quasi repellat similique sit tenetur, voluptas!</p>
+
+    <p class="main-section" id="main-section">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ea est ex laudantium natus, neque quod repudiandae veniam. Ab asperiores blanditiis cumque delectus dolorum inventore itaque laborum magnam, natus nesciunt non optio perspiciatis porro quaerat quibusdam rem repellendus suscipit unde vero voluptatibus. Accusamus accusantium, corporis deserunt dolore, ducimus fuga fugit impedit incidunt laudantium nulla numquam quis reprehenderit suscipit unde vel. Aperiam aspernatur blanditiis, esse facilis illo magnam modi necessitatibus neque non nostrum officia possimus quae unde. Dolor dolores eligendi, impedit ipsum magnam odio quas quasi quidem repellat soluta. Aperiam distinctio eum molestiae necessitatibus possimus quasi repellat similique sit tenetur, voluptas!</p>
+
+    <ul class='tasty-food' id="tasty-food">
+        <li class="codeup">Student 1</li>
+        <li class="codeup">Student 2</li>
+        <li class="codeup">Student 3</li>
+        <li class="codeup-teacher">Teacher 1</li>
+    </ul>
+
+    <div class="sub-section" id="sub-section">
+        <p id="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ea est ex laudantium natus, neque quod repudiandae veniam. Ab asperiores blanditiis cumque delectus dolorum inventore itaque laborum magnam, natus nesciunt non optio perspiciatis porro quaerat quibusdam rem repellendus suscipit unde vero voluptatibus.</p>
+    </div>
 
 <!--add jquery with CDN-->
 <script
@@ -28,12 +38,17 @@
 
         "use strict";
 
-        $('h1').html('LOOK AT THIS JQUERY!!!!');
+        //Alert an ID
+        // alert($('#tasty-food').html());
+        //
+        // $('.codeup, #codeup').css('border' ,'1px solid red').css('width' , '100px');
+        //
 
-        var para = $('p');
 
-        var newDiv = $('div').append(para);
-
+        $('li').css('font-size' , '20px').css('width' , '5em');
+        $('h1, p, li').css({
+            'margin-bottom' : '15px' , 'background-color' : 'yellow'
+        });
 
 
     });
