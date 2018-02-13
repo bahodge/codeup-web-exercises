@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+    <h1>Konami Code</h1>
+
+
+
+
+
+
+
+
+
+
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+    <script>
+        "use strict";
+
+        $(document).ready(function(){
+
+            const KONAMICODE = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+            var key = 0;
+
+            // setTimeout()
+            $(document).keydown(function(event){
+
+                //Check for right key;
+                if (KONAMICODE[key] === event.keyCode){
+                    console.log("You entered a right key!");
+                    key++;
+                    if (key >= KONAMICODE.length){
+                        enteredCode();
+
+                    }
+                } else if (KONAMICODE[key] !== event.keyCode) {
+                    youFailed();
+
+                }
+            });
+
+
+
+            function youFailed () {
+                $('h1').css('color','red').html('You have dishonored your family!');
+                $('body').append('<iframe src="https://giphy.com/embed/OPU6wzx8JrHna" width="150" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+                resetAll();
+                key = 0;
+            }
+
+
+            function enteredCode() {
+                $('h1').css('color','blue').html('You still suck! But here\'s 30 lives');
+                $('body').append('<iframe src="https://giphy.com/embed/m7Y0Ftjpaq9J6" width="150" height="150" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+                resetAll();
+                key = 0;
+
+
+
+            }
+
+            function resetAll() {
+                setTimeout(function(){
+                    $('h1').css('color','black').html('Enter the Konami Code');
+                    $('iframe').remove();
+                } , 2000);
+            }
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>

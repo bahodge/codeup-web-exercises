@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+
+        .cool-font {
+            font-weight: bold;
+            font-style: italic;
+            font-size: 3em;
+            font-family: sans-serif;
+        }
+
+        .colorful {
+            color: blue;
+            background-color: #4cae4c;
+        }
+    </style>
 </head>
 <body>
 
@@ -51,17 +66,15 @@
         "use strict";
 
         //Change color of H1 if clicked
-        $('h1').click(function () {
-            $(this).css('color', 'lightblue');
-        });
+        // $('h1').click(function () {
+        //     $(this).css('color', 'lightblue');
+        // });
 
 
-        //Change font size if paragraph is double clicked
-        $('p').dblclick(function() {
-            $(this).css('font-size', '18px');
-        });
-
-
+        // //Change font size if paragraph is double clicked
+        // $('p').dblclick(function() {
+        //     $(this).css('font-size', '18px');
+        // });
 
         //change color of li if hover
         $('li').hover(
@@ -72,6 +85,13 @@
                 $(this).css('color', 'black');
             }
         );
+
+
+        $('p').click(function (event) {
+            $(this).addClass('colorful');
+            $(event.target).toggleClass('cool-font');
+        })
+
 
 
 
