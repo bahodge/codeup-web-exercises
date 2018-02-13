@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic-Tac-Toe Game</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h1, h3  {
+            margin: 1em auto;
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+
+        }
+
+        td {
+            border: 1px solid black;
+            margin: 0 auto;
+            padding: 0;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <h1>Tic-Tac-Toe Game</h1>
+    <h3>It is <span id="turn"></span> turn</h3>
+    <table class="game-area">
+        <tr class="top row">
+            <td data-x="1" data-y="3"></td>
+            <td data-x="2" data-y="3"></td>
+            <td data-x="3" data-y="3"></td>
+        </tr>
+        <tr class="middle row">
+            <td data-x="1" data-y="2"></td>
+            <td data-x="2" data-y="2"></td>
+            <td data-x="3" data-y="2"></td>
+        </tr>
+        <tr class="bottom row">
+            <td data-x="1" data-y="1"></td>
+            <td data-x="2" data-y="1"></td>
+            <td data-x="3" data-y="1"></td>
+        </tr>
+    </table>
+
+
+
+    <script src="../js/jquery-2.2.4.min.js"></script>
+
+    <script>
+        "use strict";
+
+        $(document).ready(function () {
+
+            var turnNum = 0;
+            var gameRunning = true;
+            var xTurn = true;
+            determineTurn();
+
+
+
+            $('td').click(function(){
+                //see if the clicked box has attribute data-occ
+                console.log($(this).attr('data-x'));
+                console.log($(this).attr('data-y'));
+
+                if (!$(this).attr('data-occ')){
+                    determineTurn();
+                    if (xTurn){
+                        $(this).append("X");
+                        xTurn = false;
+                    } else {
+                        $(this).append("<p>O</p>");
+                        xTurn = true;
+                    }
+                    $(this).attr('data-occ' , 'true');
+                } else {
+                    console.log("The spot is occupied.");
+                }
+
+            });
+
+
+
+            //How to determine the winner
+
+            /*
+            * 1. check if at least 5 boxes are occupied.
+            *
+            * if so...
+            * 2. get the grids of the surrounding boxes.
+            * ***How to get this? Create an object everytime a box is clicked
+            *  X selected {x-coord: data-x, y-coord: data-y}
+            *
+            * 3. Win conditions
+            * GRID - condition 1: (1,1), (2, 1), (3, 1) --- 1
+            *      - condition 2: (1,2), (2, 2), (3, 2) --- 2
+            *      - condition 3: (1,3), (2, 3), (3, 3) --- 3
+            *      - condition 4: (1,1), (1, 2), (1, 3) |   1
+            *      - condition 5: (2,1), (2, 2), (2, 3) |   2
+            *      - condition 6: (3,1), (3, 2), (3, 3) |   3
+            *      - condition 7: (1,1), (2, 2), (3, 3) /   1
+            *      - condition 8: (1,3), (2, 2), (3, 1) \   2
+            *
+            *
+            *
+            *
+            * */
+
+
+
+
+
+
+
+            function determineTurn () {
+                if (gameRunning){
+                    if (turnNum % 2 === 0){
+                        $('#turn').html("X's");
+                    } else {
+                        $('#turn').html("O's");
+                    }
+                    turnNum++;
+                } else {
+                    console.log("Game Not Running");
+                    turnNum = 0;
+                }
+            }
+
+
+
+
+
+
+
+
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>
