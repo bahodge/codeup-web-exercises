@@ -7,6 +7,14 @@
     <title>jQuery FAQ</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+        }
         dt {
             font-weight: bold;
             font-size: 1.3em;
@@ -22,10 +30,52 @@
         .invisible {
             display: none;
         }
+
+        .highlight {
+            background-color: yellow;
+            margin-bottom: 2em;
+        }
+
+        .picture {
+            height: 150px;
+            width: 33.333%;
+            float: left;
+            border: 1px solid black;
+        }
+
+        #img-1 {
+            background-color: red;
+        }
+
+        #img-2 {
+            background-color: green;
+        }
+
+        #img-3 {
+            background-color: blue;
+        }
     </style>
 
 </head>
 <body>
+
+
+    <!--<div class="picture" id="img-1"></div>-->
+    <!--<div class="picture" id="img-2"></div>-->
+    <!--<div class="picture" id="img-3"></div>-->
+
+
+    <!--<div class="buttons">-->
+        <!--<button class="img-button" id="img-l-btn">Left</button>-->
+        <!--<button class="img-button" id="img-m-btn">Middle</button>-->
+        <!--<button class="img-button" id="img-r-btn">Right</button>-->
+    <!--</div>-->
+
+    <div>
+        <h1 id="newsletter-question">Would You like to sign up for our news letter? <span id="newsletter-mark">X</span></h1>
+
+    </div>
+
 
 
     <h1>Park Facts</h1>
@@ -68,6 +118,39 @@
     </dl>
 
 
+    <div class="register">
+        <h2>Do you want to register?</h2>
+        <button id="bg-btn"><a href="https://www.google.com">Register!</a></button>
+    </div>
+
+
+
+
+
+    <h3 id="national-parks-heading">The Grand Canyon</h3>
+    <ul id="grand-canyon">
+        <li>Brown clay everywhere</li>
+        <li>Big gash in the side of the Earth</li>
+        <li>Hills have Eyes</li>
+        <li>Has a big river flowing through</li>
+        <li>Joe Dirt was abandoned there</li>
+    </ul>
+    <h3>Yosemite National Park</h3>
+    <ul id="yosemite-park">
+        <li>Big National Park</li>
+        <li>Ol' Faithful Geyser</li>
+        <li>Lots of rocks</li>
+        <li>Several Trees</li>
+        <li>Super volcano that could kill the world</li>
+    </ul>
+    <h3>Places I've Been in Texas</h3>
+    <ul id="places-in-texas">
+        <li>San Antonio</li>
+        <li>Austin</li>
+        <li>Dallas</li>
+        <li>Corpus Christi</li>
+        <li>El Paso</li>
+    </ul>
 
 
 
@@ -79,9 +162,14 @@
 
     $(document).ready(function(){
 
+        $(".register").hide();
+
+        setTimeout(function(){
+            $('.register').fadeIn({duration: 500});
+        } , 3000);
+
 
         $('dd').addClass('invisible');
-
 
         $('#btn').hover(function(){
             $('dd').toggleClass('invisible');
@@ -91,6 +179,33 @@
         $('dt').click(function() {
             $(this).next('dd').toggleClass('invisible');
         });
+
+
+        $("#bg-btn").click(function(){
+            $('ul').each(function(index, element){
+                $('li').toggleClass('highlight')
+            });
+        });
+
+        $('h3').click(function(){
+           $(this).next('ul').children().first('li').css('font-weight', 'bold');
+        });
+
+        $('li').click(function () {
+            $(this).parent('ul').children().first('li').css('color', '#1b6d85');
+        });
+
+        $('#newsletter-mark').click(function(){
+           $(this).parent().parent().slideUp({duration: 20000});
+        });
+
+
+        $('ul').addClass('invisible');
+
+        $('ul').prev('h3').click(function(){
+            $('ul').toggleClass('invisible');
+        });
+
 
 
     });
