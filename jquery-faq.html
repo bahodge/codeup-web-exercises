@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jQuery FAQ</title>
 
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <style>
 
         * {
@@ -36,137 +40,186 @@
             margin-bottom: 2em;
         }
 
-        .picture {
-            height: 150px;
-            width: 33.333%;
-            float: left;
+        .register-now {
+            text-align: center;
+            margin-bottom: 3em;
             border: 1px solid black;
+            background-color: whitesmoke;
         }
 
-        #img-1 {
-            background-color: red;
+        #close {
+            position: absolute;
+            right: 10em;
+            top: .5em;
         }
 
-        #img-2 {
-            background-color: green;
-        }
+        /*.picture {*/
+            /*height: 150px;*/
+            /*width: 33.333%;*/
+            /*float: left;*/
+            /*border: 1px solid black;*/
+        /*}*/
 
-        #img-3 {
-            background-color: blue;
-        }
+        /*#img-1 {*/
+            /*background-color: red;*/
+        /*}*/
+
+        /*#img-2 {*/
+            /*background-color: green;*/
+        /*}*/
+
+        /*#img-3 {*/
+            /*background-color: blue;*/
+        /*}*/
     </style>
 
 </head>
 <body>
 
 
-    <!--<div class="picture" id="img-1"></div>-->
-    <!--<div class="picture" id="img-2"></div>-->
-    <!--<div class="picture" id="img-3"></div>-->
+    <div class="container">
+        <!--<div class="picture" id="img-1"></div>-->
+        <!--<div class="picture" id="img-2"></div>-->
+        <!--<div class="picture" id="img-3"></div>-->
 
 
-    <!--<div class="buttons">-->
-        <!--<button class="img-button" id="img-l-btn">Left</button>-->
-        <!--<button class="img-button" id="img-m-btn">Middle</button>-->
-        <!--<button class="img-button" id="img-r-btn">Right</button>-->
-    <!--</div>-->
+        <!--<div class="buttons">-->
+            <!--<button class="img-button" id="img-l-btn">Left</button>-->
+            <!--<button class="img-button" id="img-m-btn">Middle</button>-->
+            <!--<button class="img-button" id="img-r-btn">Right</button>-->
+        <!--</div>-->
 
-    <div>
-        <h1 id="newsletter-question">Would You like to sign up for our news letter? <span id="newsletter-mark">X</span></h1>
+        <div class="register-now">
+            <button id="close">X</button>
+            <h1 id="newsletter-question">Would You like to sign up for our news letter?</h1>
 
-    </div>
+            <button class="button-success" id="sign-up-btn">Sign Up</button>
+            <button id="close-sign-btn">No Thanks</button>
 
-
-
-    <h1>Park Facts</h1>
-
-    <button id="btn">Toggle Hide</button>
-
-    <dl>
-        <div>
-            <dt>1.National Park System</dt>
-            <dd>In the National Park System, there are 407 sites covering more than 84 million acres of land.</dd>
         </div>
 
-        <dt>2.Appalachian Trail</dt>
-        <dd>The Appalachian Trail is a 2,185 mile long public footpath that traverses the scenic, wooded, pastoral, wild, and culturally resonant lands of the Appalachian Mountains.</dd>
-
-        <dt>3. Visitors</dt>
-        <dd>In 2014, more than 290 million people visited the National Parks.</dd>
-
-        <dt>4. Deepest Cave</dt>
-        <dd>The nation’s deepest cave is 1,593 ft deep in New Mexico at Carlsbad Caverns National Park.</dd>
-
-        <dt>5. Hot Springs</dt>
-        <dd>Originally established by Congress as Hot Springs Reservation in 1832 and later becoming a national park in 1921, Hot Springs National Park represents the oldest protected area in the National Park System</dd>
-
-        <dt>6. Sites</dt>
-        <dd>In the National Park System there are: 124 historical parks or sites, 78 national monuments, 59 national parks, 25 battlefields or military parks, 18 preserves, 18 recreational areas, 10 seashores, 4 parkways, 4 lakeshores and 2 reserves.</dd>
-
-        <dt>7. Animals in Yosemite</dt>
-        <dd>Yosemite National Park supports more than 400 species of vertebrates including fish, amphibians, reptiles, birds, and mammals.</dd>
-
-        <dt>8. Geology and Rocks</dt>
-        <dd>There is 1 active volcano, thousands of petrified trees, and almost 300 waterfalls in Yellowstone National Park.</dd>
-
-        <dt>9. Seneca Falls</dt>
-        <dd>Seneca Falls National Park in New York is the location of the First Women’s Right Conventions, where expanding rights of women were discussed in the mid-19th century.</dd>
-
-        <dt>10. Largest Things</dt>
-        <dd>The largest living things in the world are in National Parks: Sequoia trees and Alaskan brown bears (the world’s largest living carnivores).</dd>
-
-    </dl>
 
 
-    <div class="register">
-        <h2>Do you want to register?</h2>
-        <button id="bg-btn"><a href="https://www.google.com">Register!</a></button>
+        <h1>Park Facts</h1>
+
+        <button id="btn">Toggle Hide</button>
+
+        <dl>
+            <div>
+                <dt>1.National Park System</dt>
+                <dd>In the National Park System, there are 407 sites covering more than 84 million acres of land.</dd>
+            </div>
+
+            <dt>2.Appalachian Trail</dt>
+            <dd>The Appalachian Trail is a 2,185 mile long public footpath that traverses the scenic, wooded, pastoral, wild, and culturally resonant lands of the Appalachian Mountains.</dd>
+
+            <dt>3. Visitors</dt>
+            <dd>In 2014, more than 290 million people visited the National Parks.</dd>
+
+            <dt>4. Deepest Cave</dt>
+            <dd>The nation’s deepest cave is 1,593 ft deep in New Mexico at Carlsbad Caverns National Park.</dd>
+
+            <dt>5. Hot Springs</dt>
+            <dd>Originally established by Congress as Hot Springs Reservation in 1832 and later becoming a national park in 1921, Hot Springs National Park represents the oldest protected area in the National Park System</dd>
+
+            <dt>6. Sites</dt>
+            <dd>In the National Park System there are: 124 historical parks or sites, 78 national monuments, 59 national parks, 25 battlefields or military parks, 18 preserves, 18 recreational areas, 10 seashores, 4 parkways, 4 lakeshores and 2 reserves.</dd>
+
+            <dt>7. Animals in Yosemite</dt>
+            <dd>Yosemite National Park supports more than 400 species of vertebrates including fish, amphibians, reptiles, birds, and mammals.</dd>
+
+            <dt>8. Geology and Rocks</dt>
+            <dd>There is 1 active volcano, thousands of petrified trees, and almost 300 waterfalls in Yellowstone National Park.</dd>
+
+            <dt>9. Seneca Falls</dt>
+            <dd>Seneca Falls National Park in New York is the location of the First Women’s Right Conventions, where expanding rights of women were discussed in the mid-19th century.</dd>
+
+            <dt>10. Largest Things</dt>
+            <dd>The largest living things in the world are in National Parks: Sequoia trees and Alaskan brown bears (the world’s largest living carnivores).</dd>
+
+        </dl>
+
+
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert-success">
+                            <div class="register">
+                                <h2>Do you want to register?</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-close-btn">Close</button>
+                        <button type="button" class="btn btn-primary">Register Now!</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+
+
+
+
+
+
+        <h3 id="national-parks-heading">The Grand Canyon</h3>
+        <ul id="grand-canyon">
+            <li>Brown clay everywhere</li>
+            <li>Big gash in the side of the Earth</li>
+            <li>Hills have Eyes</li>
+            <li>Has a big river flowing through</li>
+            <li>Joe Dirt was abandoned there</li>
+        </ul>
+        <h3>Yosemite National Park</h3>
+        <ul id="yosemite-park">
+            <li>Big National Park</li>
+            <li>Ol' Faithful Geyser</li>
+            <li>Lots of rocks</li>
+            <li>Several Trees</li>
+            <li>Super volcano that could kill the world</li>
+        </ul>
+        <h3>Places I've Been in Texas</h3>
+        <ul id="places-in-texas">
+            <li>San Antonio</li>
+            <li>Austin</li>
+            <li>Dallas</li>
+            <li>Corpus Christi</li>
+            <li>El Paso</li>
+        </ul>
+
+
+
     </div>
 
 
 
 
 
-    <h3 id="national-parks-heading">The Grand Canyon</h3>
-    <ul id="grand-canyon">
-        <li>Brown clay everywhere</li>
-        <li>Big gash in the side of the Earth</li>
-        <li>Hills have Eyes</li>
-        <li>Has a big river flowing through</li>
-        <li>Joe Dirt was abandoned there</li>
-    </ul>
-    <h3>Yosemite National Park</h3>
-    <ul id="yosemite-park">
-        <li>Big National Park</li>
-        <li>Ol' Faithful Geyser</li>
-        <li>Lots of rocks</li>
-        <li>Several Trees</li>
-        <li>Super volcano that could kill the world</li>
-    </ul>
-    <h3>Places I've Been in Texas</h3>
-    <ul id="places-in-texas">
-        <li>San Antonio</li>
-        <li>Austin</li>
-        <li>Dallas</li>
-        <li>Corpus Christi</li>
-        <li>El Paso</li>
-    </ul>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
 
 
-
-<script src="js/jquery-2.2.4.min.js"></script>
 <script>
     "use strict";
 
     $(document).ready(function(){
 
-        $(".register").hide();
 
         setTimeout(function(){
-            $('.register').fadeIn({duration: 500});
-        } , 3000);
+            $('#myModal').modal('show');
+        }, 8000);
+
 
 
         $('dd').addClass('invisible');
@@ -195,15 +248,19 @@
             $(this).parent('ul').children().first('li').css('color', '#1b6d85');
         });
 
-        $('#newsletter-mark').click(function(){
-           $(this).parent().parent().slideUp({duration: 20000});
+        $('#sign-up-btn').click(function(){
+           $(this).parent().css('background-color', 'green');
+        });
+
+        $('#close-sign-btn , #close').click(function(){
+            $(this).parent().slideUp({duration: 200});
         });
 
 
         $('ul').addClass('invisible');
 
         $('ul').prev('h3').click(function(){
-            $('ul').toggleClass('invisible');
+            $(this).next('ul').toggleClass('invisible');
         });
 
 
