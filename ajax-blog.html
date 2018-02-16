@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Ajax Blog</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: whitesmoke;
+        }
+
+        .post-date,
+        .post-title,
+        .post-content,
+        .post-category-panel {
+            padding: 1em;
+            background-color: #407b78;
+        }
+
+        .hoverStyle {
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: white underline;
+            font-size: 1.5em;
+        }
+
+
+        .post {
+            padding-top: 1em;
+            background-color: #1b6d85;
+            color: whitesmoke;
+        }
+
+        .post-date {
+            font-size: 1.3em;
+        }
+
+        .post-title {
+            font-size: 2.0em;
+            margin-top: 1.3em;
+            text-align: center;
+        }
+
+        .post-content {
+            font-size: 1.3em;
+            font-style: italic;
+
+        }
+
+        .post-category-title {
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="container">
+    <h1>Ajax Blog</h1>
+
+
+    <div class="pretty-style" id="posts"></div>
+</div>
+
+
+
+
+
+<script src="./js/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    $(document).ready(function () {
+
+
+        $.ajax("./data/blog.json").done(function(data){
+            buildHTML(data);
+            addListeners();
+        }).fail(function (jqObj, status) {
+            console.log(status);
+        }).always(function(){
+            console.log('Request Sent');
+        });
+
+
+        function buildHTML (posts) {
+            var html = "";
+
+            posts.forEach(function (post) {
+                html += "<div class='post panel-default panel row col-xs-10 col-xs-offset-1'>";
+                html += "<p class='post-date panel col-xs-12'>Posted: " + post.date + "</p>";
+                html += "<h4 class='post-title panel col-xs-12'>" + post.title + "</h4>";
+                html += "<p class='post-content panel'>" + post.content + "</p>";
+                // html += "<hr>";
+
+                html += "<div class='post-category-panel panel'>";
+                html += "<h5 class='post-category-title'>Categories: </h5>";
+                html += "<ul class='list-inline'>";
+
+                for (var i = 0; i < post.categories.length; i++){
+                    html += "<li class='single-category'>" + post.categories[i] + "</li>";
+                }
+                html += "</ul>";
+                html += "</div>";
+                html += "</div>";
+            });
+
+
+            $('#posts').html(html);
+
+        }
+
+
+
+        function addListeners(){
+
+            $(".single-category").hover(function(){
+                $(this).toggleClass('hoverStyle');
+            })
+
+        }
+
+
+
+
+
+
+
+
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
