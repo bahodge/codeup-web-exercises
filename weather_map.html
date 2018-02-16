@@ -34,6 +34,16 @@
             color: white;
         }
 
+        .remove-padding {
+            padding: 0;
+        }
+
+        #forecast-length {
+            height: 3.3em;
+            width: 100%;
+        }
+        
+
         .weather {
             padding: 0;
         }
@@ -98,9 +108,17 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12 text-center">
-            <input type="text" id="search-bar" placeholder="Search a City" value="San Antonio" size="25">
+        <div class="remove-padding col-xs-8 text-left">
+            <input type="text" id="search-bar" placeholder="Search a City" value="San Antonio" size="20">
             <button class="search-btn" id="search-btn">Search!</button>
+        </div>
+        <div class="remove-padding col-xs-4 text-right">
+
+            <select name="forecast-length" id="forecast-length">
+                <option value="2" id="forecast-2" selected>2 Day Forecast</option>
+                <option value="4" id="forecast-4">4 Day Forecast</option>
+                <option value="5" id="forecast-5">5 Day Forecast</option>
+            </select>
         </div>
     </div>
 
@@ -152,6 +170,10 @@
                 map = new google.maps.Map(document.querySelector('#map-display'), mapOptions);
                 var initialSearch =$('#search-bar').val();
                 geoCodeIt(initialSearch);
+                map.addListener('click', function (e) {
+                    addMarker(e.latLng, map);
+                    revGeoCodeIt(e.latLng);
+                });
             }
         //Initialize Map
         initMap();
@@ -208,14 +230,12 @@
             draggable: true
         });
 
-
-
-        // marker.addListener('drag', handleEvent);
         marker.addListener('dragend', function(){
             var markerPos  = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
             revGeoCodeIt(markerPos);
 
         });
+
         markers.push(marker);
     }
 
@@ -229,11 +249,6 @@
     // Removes the markers from the map, but keeps them in the array.
     function clearMarkers() {
         setMapOnAll(null);
-    }
-
-    // Shows any markers currently in the array.
-    function showMarkers() {
-        setMapOnAll(map);
     }
 
     // Deletes all markers in the array by removing references to them.
@@ -253,18 +268,20 @@
                 lat: latitude,
                 lon: longitude
             }).done(function(response){
-                buildForecastHTML(response);
-
+                buildForecastHTML(response, $('#forecast-length').val());
             }).fail(function(jqObj, status, error){
                 console.log('status: ' + status + "     Error Message: "+ error);
             });
-            //
+
+
+
             var currentRequest = $.get("http://api.openweathermap.org/data/2.5/weather", {
                 APPID: "7220976cc650608614cbfd1d2fa88d8a",
                 units: "imperial",
                 lat: latitude,
                 lon: longitude
             }).done(function(response){
+
                 buildCurDayHTML(response);
                 //GET NAME OF CLOSEST CITY FOR THE TITLE
                 closestCity = response.name;
@@ -278,11 +295,10 @@
 
         function buildCurDayHTML(curDay){
             var html = "";
-
             var iconCode = curDay.weather[0].icon;
 
             html += "<div class='weather-block col-xs-4'>";
-            html += '<h2 class="cur-temp"><span class="high">'+ curDay.main.temp_max.toFixed(1) + '</span> / <span class="low"> ' + curDay.main.temp_min.toFixed(1) + '</span></h2>';
+            html += '<h2 class="cur-temp"><span class="high">'+ curDay.main.temp_max.toFixed(1) + '&#8457;</span> / <span class="low"> ' + curDay.main.temp_min.toFixed(1) + '&#8457;</span></h2>';
             html += '<img class="weather-icon" src="http://openweathermap.org/img/w/' + iconCode + '.png">';
             html += '<ul class="weather-list">';
             html += '<li class="weather-list-trait cur-cloud">Clouds: ' + curDay.clouds.all + '</li>';
@@ -306,23 +322,30 @@
                 }
             }
 
-            //BELOW will only allow a maximum of 2 days
-            for (var j = 0; j < 2; j++){
-                var iconCode = parsedArray[j].weather[0].icon;
-                html += "<div class='weather-block col-xs-4'>";
-                html += '<h2 class="cur-temp"><span class="high">'+ parsedArray[j].main.temp_max.toFixed(1) + '</span> /<span class="low"> ' + parsedArray[j].main.temp_min.toFixed(1) + '</span></h2>';
-                html += '<img class="weather-icon" src="http://openweathermap.org/img/w/' + iconCode + '.png">';
-                html += '<ul class="weather-list">';
-                html += '<li class="weather-list-trait cur-cloud">Clouds: ' + parsedArray[j].clouds.all + '</li>';
-                html += '<li class="weather-list-trait cur-humidity">Humidity: ' + parsedArray[j].main.humidity + '</li>';
-                html += '<li class="weather-list-trait cur-wind">Wind Speed: ' + parsedArray[j].wind.speed + '</li>';
-                html += '<li class="weather-list-trait cur-pressure">Pressure: ' + parsedArray[j].main.pressure + '</li>';
-                html += '</ul>';
-                html += "</div>";
-            }
+                //BELOW will only allow a maximum of 2 days //DEFAULT
+                for (var j = 0; j < 2; j++){
+                    var iconCode = parsedArray[j].weather[0].icon;
 
+                    html += "<div class='weather-block col-xs-4'>";
+                    html += '<h2 class="cur-temp"><span class="high">'+ parsedArray[j].main.temp_max.toFixed(1) + '&#8457;</span> /<span class="low"> ' + parsedArray[j].main.temp_min.toFixed(1) + '&#8457;</span></h2>';
+                    html += '<img class="weather-icon" src="http://openweathermap.org/img/w/' + iconCode + '.png">';
+                    html += '<ul class="weather-list">';
+                    html += '<li class="weather-list-trait cur-cloud">Clouds: ' + parsedArray[j].clouds.all + '</li>';
+                    html += '<li class="weather-list-trait cur-humidity">Humidity: ' + parsedArray[j].main.humidity + '</li>';
+                    html += '<li class="weather-list-trait cur-wind">Wind Speed: ' + parsedArray[j].wind.speed + '</li>';
+                    html += '<li class="weather-list-trait cur-pressure">Pressure: ' + parsedArray[j].main.pressure + '</li>';
+                    html += '</ul>';
+                    html += "</div>";
+                }
             $('.weather').append(html);
         }
+
+
+
+
+
+
+
 
 
 
@@ -331,7 +354,9 @@
             $('#app-title').text('Weather in: '+ closestCity);
         });
 
-
+        $('#search-bar').click(function(){
+            $(this).val("");
+        });
 
     // });
 
