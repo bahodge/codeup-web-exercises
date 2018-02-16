@@ -1,0 +1,86 @@
+body {
+    /*Photo by Lukas from Pexels https://www.pexels.com/photo/conifers-environment-fir-trees-forest-574159/*/
+    background: url(../img/trees.jpeg) no-repeat;
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    font-size: 3em;
+    color: whitesmoke;
+    text-decoration: underline floralwhite;
+}
+
+input {
+    font-size: 2em;
+    background-color: gainsboro;
+    color: #3d85cb;
+}
+
+button {
+    font-size: 2em;
+    background-color: #4cae4c;
+    color: white;
+}
+
+.remove-padding {
+    padding: 0;
+}
+
+#forecast-length {
+    height: 3.3em;
+    width: 100%;
+}
+
+
+.weather {
+    padding: 0;
+}
+
+.weather-list {
+    padding: 0;
+}
+
+.weather-list-trait {
+    margin-top: 5px;
+    list-style: none;
+    text-align: left;
+}
+
+.weather-block {
+    margin: 0 auto;
+    background-color: #839c82;
+    color: whitesmoke;
+    border: 1px solid black;
+    font-size: 1.5em;
+}
+
+
+.weather-block h2 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.weather-icon {
+    margin: 0 auto;
+    display: block;
+}
+
+.weather-block li {
+    font-size: 1em;
+}
+
+.high {
+    color: blue;
+}
+
+.low {
+    color: red;
+}
+
+#map-display {
+    text-align: center;
+    margin: 0 auto;
+    height: 300px;
+    width: 100%;
+}
