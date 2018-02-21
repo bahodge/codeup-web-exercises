@@ -31,18 +31,57 @@ const users = [
     },
 ];
 
-const languageArray = users.filter(function(person){
-   return person.languages.length >= 3;
-});
+//Problem 1
 
-const emailArray = users.map(function(person){
-    return person.email;
-});
+// const languageArray = users.filter(function(person){
+//    return person.languages.length >= 3;
+// });
 
-const idArray = users.reduce( (acc, user) => {
-    acc[user.id] = user;
+//Same as: -----------------------------------//
+// const languageArray = users.filter((person) => person.languages.length >= 3);
+
+//Same as: -----------------------------------//
+const languageArray = users.filter(({ languages }) => languages.length >= 3);
+
+
+//Problem 2
+
+// const emailArray = users.map(function(person){
+//     return person.email;
+// });
+
+// //Same as: -----------------------------------//
+// const emailArray = users.map((person) => person.email);
+
+//Same as: -----------------------------------//
+const emailArray = users.map(({ email }) => email);
+
+
+
+//Problem 3
+//
+// const idArray = users.reduce(function(acc, user){
+//     acc[user.id] = user;
+//     return acc;
+// }, {});
+
+// Same as: -----------------------------------//
+// const idArray = users.reduce( (acc, user) => {
+//     acc[user.id] = user;
+//     return acc;
+// }, {});
+
+// Better way:  -----------------------------------//
+const idArray = users.reduce( (acc, {id, name, email, languages}) => {
+    acc[id] = {
+        name,
+        email,
+        languages
+    };
     return acc;
 }, {});
+
+
 
 console.log(languageArray);
 console.log(emailArray);
