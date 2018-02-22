@@ -55,8 +55,8 @@ console.log(arrayOfUserObj);
 
 const arrayOfCivilServants = customers.filter(({occupation}) => {
     return (occupation.toLowerCase() === 'teacher' || occupation.toLowerCase() === 'police officer');
-}).map(({name, age, occupation}) => {
-    return {name, age, occupation: 'civil servant'};
+}).map(({name, age}) => {
+    return {name, age, 'status' : 'civil servant'};
 });
 console.log(arrayOfCivilServants);
 
