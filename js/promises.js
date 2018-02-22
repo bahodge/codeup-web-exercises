@@ -10,32 +10,32 @@
 //     }
 // });
 
-function wait (num) {
-
+const wait = (timer) => {
    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve();
-        }, num);
+            resolve(`Your promise resolved after ${timer} milliseconds`);
+        }, timer);
     });
-}
+};
 
 
-wait(1000).then(() => console.log('You\'ll see this after 1 second'));
-wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+wait(1000).then((data) => console.log(data));
+wait(3000).then((data) => console.log(data));
+wait(2300).then((data) => console.log(data));
 
 
-function getLastCommit(username){
-    return fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': 'token 7c66db3d09881724b06d6f6233e085d5e5d56dfb'}})
+const getLastCommit = (username) => {
+    return fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': 'token YOUR-TOKEN-HERE'}})
         .then((response) => response.json())
         .then(data => {
             let lastCommit = data[0].created_at.substring(0, 10);
             console.log(`${username}'s last commit was on: ${lastCommit}`)
         })
         .catch(() => console.error('BAD REQUEST!'));
-}
+};
 
 
-getLastCommit('bahodge');
+console.log(getLastCommit('bahodge'));
 
 
 

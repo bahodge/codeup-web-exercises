@@ -30,7 +30,7 @@ const customers = [
 
 //USING MAP
 const arrayOfFirstLetterOfFruit = fruits.map(fruit => fruit[0]);
-console.log(arrayOfFirstLetterOfFruit);
+// console.log(arrayOfFirstLetterOfFruit);
 
 
 // PROBLEM 2 - create array of user objects based on the customers array
@@ -48,7 +48,7 @@ console.log(arrayOfFirstLetterOfFruit);
 const arrayOfUserObj = customers.map(({ name, age}) => {
     return {name, age};
 });
-console.log(arrayOfUserObj);
+// console.log(arrayOfUserObj);
 
 // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
 // containing the same properties as the objects on the customers objects
@@ -58,15 +58,58 @@ const arrayOfCivilServants = customers.filter(({occupation}) => {
 }).map(({name, age}) => {
     return {name, age, 'status' : 'civil servant'};
 });
-console.log(arrayOfCivilServants);
+// console.log(arrayOfCivilServants);
 
 
 // PROBLEM 4 - determine the average age of customers
 
 const avgAgeOfCustomers = customers.reduce( ( acc, { age } ) => acc + age, 0 ) / customers.length;
-console.log(`Average Age ${avgAgeOfCustomers}`);
+// console.log(`Average Age ${avgAgeOfCustomers}`);
 
 //            PROBLEM 1 HINT - use .map()
 //            PROBLEM 2 HINT - use .map()
 //            PROBLEM 3 HINT - use .filter()
 //            PROBLEM 4 HINT - use .reduce()
+
+// Given the following array...
+const family = [
+    {
+        name: "Karen",
+        gender: "female",
+        age: 29,
+    },
+    {
+        name: "Summer",
+        gender: "female",
+        age: 10,
+    },
+    {
+        name: "Bob",
+        gender: "male",
+        age: 32,
+    },
+];
+
+
+
+// complete the bonuses below...
+// - Calculate the average age of family members
+
+const calcAvgAge = Math.floor(family.reduce((acc , { age }) => acc += age, 0) / family.length);
+console.log(calcAvgAge);
+
+// - Create an array of family objects without the age property
+
+const removeAge = family.reduce((acc, { name, gender }, index ) => {
+    return acc[index] = {
+        name,
+        gender
+    }
+}, []);
+
+console.log(removeAge);
+
+// - Create an array of all minors
+// - Calculate the total age combined of family members
+// - Create an array of only female family member objects
+// - Create a single object with properties containing arrays of all names, genders, and ages
